@@ -1,0 +1,46 @@
+.TH man_3_printf
+
+.SH Name
+PRINTF
+
+.SH Synopsis
+printf print data and argument.
+
+Descroption
+printf function produces output according to a format.
+
+_printf function prototype
+int _printf(const char *format, ...);
+
+Return value
+the number of characters printed.
+
+Format string
+the format is composed of the character % and one of following characters
+c,s,d,i,%. each of these flags will give format to each argument with the 
+excepcion of the %% format string.
+
+%% print the character "%"
+
+%c if the argument is a char print the specified character, 
+if the argument is an int print the character acording ASCII table.
+
+%s print a especified string 
+
+%i print signed decimal notation of the integer argument
+
+%d print signed decimal notation of the integer argument
+
+Examples
+
+int a = 1;
+int b = 2;
+char c = 'H';
+char* d = 'Good day';
+
+_printf ("test format character :%c, string: %s, decimal: %i, decimal: %d", c, d, a, b);
+
+
+the output would be
+
+-test format character :H, string: Good day, decimal: 1, decimal: 2
