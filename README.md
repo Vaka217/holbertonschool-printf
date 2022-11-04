@@ -6,6 +6,7 @@
 Peers working in this proyect.
 
 Gonzalo Cabaleiro @Vaka217
+
 Christopher Oxandabarat @ChrisOxan
 
 <hr>
@@ -32,14 +33,14 @@ More Info:
 
 -Authorized functions and macros
 
-	<ul>
+	<ol>
 		<li>
 			write (man 2 write)
 		</li>
 		<li>
 			malloc (man 3 malloc)
 		</li>
-		<li>}
+		<li>
 			free (man 3 free)
 		</li>
 		<li>
@@ -54,4 +55,4 @@ More Info:
 		<li>
 			va_arg (man 3 va_arg)
 		</li>
-	</ul>
+	</ol>
