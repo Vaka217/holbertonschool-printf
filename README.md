@@ -28,14 +28,12 @@ Christopher Oxandabarat @ChrisOxan
 		<li>
 			Flowchart
 		</li>
-	</ul>
 
 <h4>More Info:
 </h4>
 
 -Authorized functions and macros
 
-	<ol>
 		<li>
 			write (man 2 write)
 		</li>
@@ -57,4 +55,4 @@ Christopher Oxandabarat @ChrisOxan
 		<li>
 			va_arg (man 3 va_arg)
 		</li>
-	</ol>
+	</ul>
