@@ -14,7 +14,9 @@ Christopher Oxandabarat @ChrisOxan
 <h3>Content
 </h3>
 
--index
+-index and more info:
+
+-Authorized functions and macros
 	<ul>
 		<li>
 			_printf
@@ -28,12 +30,6 @@ Christopher Oxandabarat @ChrisOxan
 		<li>
 			Flowchart
 		</li>
-
-<h4>More Info:
-</h4>
-
--Authorized functions and macros
-
 		<li>
 			write (man 2 write)
 		</li>
