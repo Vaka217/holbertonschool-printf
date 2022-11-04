@@ -26,7 +26,7 @@ Content
 			Flowchart
 		</li>
 	</ul>
-<hr>
+<hr />
 
 More Info:
 
