@@ -17,14 +17,13 @@ Content
 		<li>Dependencies</li>
 		<li>Description</li>
 		<li>Flowchart</li>
-	</ul>
 <hr>
 
-More Info
+More Info:
 
 -Authorized functions and macros
 
-	<ul>
+
 		<li>write (man 2 write)</li>
 		<li>malloc (man 3 malloc)</li>
 		<li>free (man 3 free)</li>
