@@ -3,14 +3,16 @@
 </h1>
 
 <hr>
-Peers working in this proyect.
+<h2>Peers working in this proyect.
+</h2>
 
 Gonzalo Cabaleiro @Vaka217
 
 Christopher Oxandabarat @ChrisOxan
 
 <hr>
-Content
+<h3>Content
+</h3>
 
 -index
 	<ul>
@@ -28,7 +30,8 @@ Content
 		</li>
 	</ul>
 
-More Info:
+<h4>More Info:
+</h4>
 
 -Authorized functions and macros
 
