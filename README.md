@@ -20,7 +20,7 @@ Content
 	</ul>
 <hr>
 
-More Info:
+More Info
 
 -Authorized functions and macros
 
