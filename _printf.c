@@ -1,9 +1,4 @@
-#include <stdarg.h>
 #include "main.h"
-#include <stddef.h>
-#include <unistd.h>
-#include <string.h>
-#include <stdio.h>
 
 /**
   * _printf - produces output according to a format.
@@ -15,38 +10,41 @@
 int _printf(const char *format, ...)
 {
 	va_list list;
-	int i = 0, j, count = 0, *p = &count;
-	char *str;
+	int i = 0, count = 0, percount = 0, spcs = 1;
 
-	while (format && format[i])
+	if (format)
 	{
 		va_start(list, format);
-		if (format[i - 1] == '%')
+		while (format[i])
 		{
-			switch (format[i])
+			if (format[i - spcs] == '%' && percount % 2 != 0 && format[i] == ' ')
+				spcs++;
+			else
 			{
-				case 'c':
-					_putchar(va_arg(list, int), p);
-					break;
-				case 's':
-					str = va_arg(list, char *);
-					for (j = 0; str[j] != '\0'; j++)
-						_putchar(str[j], p);
-					break;
-				case 'd':
-					_putnum(va_arg(list, int), p);
-					break;
-				case 'i':
-					_putnum(va_arg(list, int), p);
-					break;
-				case '%':
-					_putchar('%', p);
-					break;
+				if (format[i] == '%')
+					percount++;
+				if (percount % 2 == 0 && percount != 0 && format[i] == '%')
+				{
+					_putchar('%');
+					count++;
+				}
+				else if (format[i - spcs] == '%' && format[i] != '%' && percount % 2 != 0)
+				{
+					count += (*get_spec_func(format[i]))(list);
+					percount = 0;
+				}
+				else if (format[i] != '%')
+				{
+					_putchar(format[i]);
+					count++;
+					percount = 0;
+				}
+				spcs = 1;
 			}
+			i++;
 		}
-		else if (format[i] != '%')
-			_putchar(format[i], p);
-		i++;
 	}
+	if (count == 0 || (percount % 2 != 0 && format[i - spcs] == '%') || !format)
+		return (-1);
 	return (count);
 }
