@@ -7,15 +7,8 @@
   *
   */
 
-void _putnum(int i, int *p)
+void _putnum(unsigned int i, int *p)
 {
-		if (i < 0)
-		{
-			_putchar('-');
-			i = -i;
-			*p += 1;
-		}
-
 		if (i / 10)
 			_putnum(i / 10, p);
 

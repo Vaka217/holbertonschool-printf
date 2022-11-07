@@ -45,8 +45,14 @@ int spec_str(va_list list)
 
 int spec_int(va_list list)
 {
-	int i = va_arg(list, int), count = 0, *p = &count;
+	int i = va_arg(list, unsigned int), count = 0, *p = &count;
 
+	if (i < 0)
+	{
+		_putchar('-');
+		i = -i;
+		*p += 1;
+	}
 	_putnum(i, p);
 	return (count);
 }
