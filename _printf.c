@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
 	if (format)
 	{
 		va_start(list, format);
-		while (format[i])
+		for ( ; format[i]; i++)
 		{
 			if (format[i - spcs] == '%' && percount % 2 != 0 && format[i] == ' ')
 				spcs++;
@@ -41,8 +41,8 @@ int _printf(const char *format, ...)
 				}
 				spcs = 1;
 			}
-			i++;
 		}
+		va_end(list);
 	}
 	if (count == 0 || (percount % 2 != 0 && format[i - spcs] == '%') || !format)
 		return (-1);

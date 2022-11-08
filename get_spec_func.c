@@ -15,9 +15,15 @@ int (*get_spec_func(char c))(va_list)
 		{'s', spec_str},
 		{'i', spec_int},
 		{'d', spec_int},
+		{'b', spec_bin},
+		{'u', spec_uns},
+		{'o', spec_oct},
+		{'x', spec_hex},
+		{'X', spec_HEX},
+		{'p', spec_adr},
 		{'!', spec_other},
 	};
-	while (i < 4)
+	while (i < 10)
 	{
 		if (specs[i].spec == c)
 			return (specs[i].f);

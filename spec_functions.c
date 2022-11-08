@@ -30,7 +30,7 @@ int spec_str(va_list list)
 		str = "(null)";
 		i = 6;
 	}
-	for (i = 0; str[i] != '\0'; i++)
+	for (i = 0; str[i]; i++)
 		_putchar(str[i]);
 	return (i);
 }
@@ -45,15 +45,21 @@ int spec_str(va_list list)
 
 int spec_int(va_list list)
 {
-	int i = va_arg(list, unsigned int), count = 0, *p = &count;
+	int count = 0, i = 0, num = va_arg(list, unsigned int);
+	char *p = NULL;
 
-	if (i < 0)
+	if (num < 0)
 	{
 		_putchar('-');
-		i = -i;
-		*p += 1;
+		count++;
+		num = -num;
 	}
-	_putnum(i, p);
+	p = get_number(num, 10);
+	for ( ; p[i]; i++)
+	{
+		_putchar(p[i]);
+		count++;
+	}
 	return (count);
 }
 
@@ -64,6 +70,20 @@ int spec_int(va_list list)
   * Return: The number of characters printed, in this case the character
   * that is not a conversion specifier and the '/' previous to it.
   */
+
+int spec_bin(va_list list)
+{
+	int count = 0, i = 0, num = va_arg(list, unsigned int);
+	char *p = NULL;
+
+	p = get_number(num, 2);
+	for ( ; p[i]; i++)
+	{
+		_putchar(p[i]);
+		count++;
+	}
+	return (count);
+}
 
 int spec_other(__attribute__ ((unused)) va_list list)
 {
