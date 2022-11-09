@@ -4,7 +4,10 @@
   * _printf - produces output according to a format.
   * @format: Character string composed of zero or more directives.
   *
-  * Return: The number of characters printed (excluding the null byte).
+  * Description: Produces output according to a format, a string that specifies
+  * how subsequent arguments are converted for output.
+  * Return: The number of characters printed (excluding the null byte) or -1
+  * if an output error is encountered.
   */
 
 int _printf(const char *format, ...)
@@ -23,14 +26,14 @@ int _printf(const char *format, ...)
 			{
 				if (format[i] == '%')
 					percount++;
-				if (percount % 2 == 0 && percount != 0 && format[i] == '%')
+				if (percount % 2 == 0 && format[i] == '%')
 				{
 					_putchar('%');
 					count++;
 				}
 				else if (format[i - spcs] == '%' && format[i] != '%' && percount % 2 != 0)
 				{
-					count += (*get_spec_func(format[i]))(list);
+					count += (*get_specifier_func(format[i]))(list);
 					percount = 0;
 				}
 				else if (format[i] != '%')
@@ -44,7 +47,7 @@ int _printf(const char *format, ...)
 		}
 		va_end(list);
 	}
-	if (count == 0 || (percount % 2 != 0 && format[i - spcs] == '%') || !format)
+	if ((percount % 2 != 0 && format[i - spcs] == '%') || !format)
 		return (-1);
 	return (count);
 }

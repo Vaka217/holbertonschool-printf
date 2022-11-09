@@ -32,9 +32,14 @@ int spec_uns(va_list list);
 int spec_oct(va_list list);
 int spec_hex(va_list list);
 int spec_HEX(va_list list);
-int spec_adr(va_list list);
+int spec_adress(va_list list);
+int spec_ASCII_str(va_list list);
+int spec_rev(va_list list);
+int spec_ROT(va_list list);
 char *string_toupper(char *str);
-int (*get_spec_func(char c))(va_list);
+int print_rev(char *str);
+int print_rot13(char *str);
+int (*get_specifier_func(char c))(va_list);
 char *get_number(unsigned int num, int base);
 char *get_adress(long unsigned int num, int base);
 
