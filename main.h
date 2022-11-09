@@ -41,6 +41,6 @@ int print_rev(char *str);
 int print_rot13(char *str);
 int (*get_specifier_func(char c))(va_list);
 char *get_number(unsigned int num, int base);
-char *get_adress(long unsigned int num, int base);
+char *get_adress(unsigned long int num, int base);
 
 #endif

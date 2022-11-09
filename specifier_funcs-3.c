@@ -19,21 +19,25 @@ int spec_ASCII_str(va_list list)
 
 	if (!str)
 	{
-		str = "(null)";
-		count += 6;
-		return (count);
+		return (_printf("(null)"));
 	}
 	for (i = 0; str[i]; i++)
 	{
-		if ((str[i] >= 0 && str[i] < 32) || str[i] >= 127)
+		if ((0 < str[i] && str[i] < 32) || str[i] >= 127)
 		{
 			_putchar('\\');
 			_putchar('x');
-			_putchar('0');
+			count += 3;
 			ascii = str[i];
 			ptr = get_number(ascii, 16);
 			string_toupper(ptr);
-			for ( ; ptr[j]; j++)
+			for (j = 0; str[j]; j++)
+			if (j == 1)
+			{
+				_putchar('0');
+				count++;
+			}
+			for (j = 0; ptr[j]; j++)
 			{
 				_putchar(ptr[j]);
 				count++;

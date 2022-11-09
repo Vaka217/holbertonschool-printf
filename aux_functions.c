@@ -20,7 +20,7 @@ char *get_number(unsigned int num, int base)
 	char *ptraux = NULL;
 	int remainder = 0;
 
-	ptraux = &aux[64];
+	ptraux = &aux[63];
 	*ptraux = '\0';
 	if (num == 0)
 		*--ptraux = '0';
@@ -131,7 +131,7 @@ int print_rot13(char *str)
 			else
 				_putchar(str[i] + 13);
 		}
-		else if ((str[i] >= 'A') && str[i] <= 'z')
+		else if ((str[i] >= 'A') && str[i] <= 'Z')
 		{
 			if (str[i] >= 78)
 				_putchar(str[i] - 13);
