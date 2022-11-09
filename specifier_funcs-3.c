@@ -23,7 +23,7 @@ int spec_ASCII_str(va_list list)
 	}
 	for (i = 0; str[i]; i++)
 	{
-		if ((0 < str[i] && str[i] < 32) || str[i] >= 127)
+		if ((str[i] >= 0 && str[i] < 32) || str[i] >= 127)
 		{
 			_putchar('\\');
 			_putchar('x');
