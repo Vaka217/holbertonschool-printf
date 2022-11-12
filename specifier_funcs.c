@@ -26,10 +26,7 @@ int spec_str(va_list list)
 	int i = 0;
 
 	if (!str)
-	{
 		str = "(null)";
-		i = 6;
-	}
 	for (i = 0; str[i]; i++)
 		_putchar(str[i]);
 	return (i);
@@ -53,12 +50,18 @@ int spec_int(va_list list)
 	char *ptr = NULL;
 
 	if (num < 0)
+	/* We take each number as a character when we print it with _putchar, */
+	/* meaning for example that with 2 we print 2 + 48, because the ASCII value */
+	/* of 2 is 50. If we do the same with negative numbers, for example -2 + 48 */
+	/* gives 46, which is not the value of 2, is not even a number. That's why */
+	/* we check this. */
 	{
 		_putchar('-');
 		count++;
 		num = -num;
 	}
-	ptr = get_number(num, 10);
+	ptr = get_number(num, 10); /* It returns the number in the given base as a */
+				   /* string. */
 	for ( ; ptr[i]; i++)
 	{
 		_putchar(ptr[i]);
