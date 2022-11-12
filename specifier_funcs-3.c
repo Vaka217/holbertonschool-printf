@@ -15,7 +15,7 @@
 int spec_ASCII_str(va_list list)
 {
 	char *str = va_arg(list, char *), *ptr = NULL;
-	int i = 0, j = 0, count = 0, ascii;
+	int i = 0, j = 0, count = 0;
 
 	if (!str)
 	{
@@ -25,13 +25,14 @@ int spec_ASCII_str(va_list list)
 	{
 		if ((str[i] >= 0 && str[i] < 32) || str[i] >= 127)
 		{
-			_putchar('\\');
-			_putchar('x');
-			count += 3;
-			ascii = str[i];
-			ptr = get_number(ascii, 16);
+			count += _printf("\\x");
+			if (str[i] < 16)
+			{
+				_putchar('0');
+				count++;
+			}
+			ptr = get_number(str[i], 16);
 			string_toupper(ptr);
-			for (j = 0; str[j]; j++)
 			if (j == 1)
 			{
 				_putchar('0');
