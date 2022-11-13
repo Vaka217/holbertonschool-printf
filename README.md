@@ -163,4 +163,4 @@
 <div id="Flowchart">
         <strong>Flowchart</strong>
 </h2>
-        <img src="https://cdn.discordapp.com/attachments/732360655658680452/1041043687410507867/Diagramadeflujo.png" alt="Flowchart" width="800" height="800">
+        <img src="https://cdn.discordapp.com/attachments/732360655658680452/1041397780725383279/Flowchart.png" alt="Flowchart" width="800" height="800">
